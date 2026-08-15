@@ -389,3 +389,15 @@ img {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     animation: morph 8s ease-in-out infinite !important;
 }
+.about-image .image-border {
+    animation: morph 8s ease-in-out infinite,rotate 20s linear infinite !important;
+    border: 2px dashed #6c63ff;
+    border-radius: inherit;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    z-index: -1;
+    opacity: 0.7;
+}
+

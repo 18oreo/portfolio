@@ -38,10 +38,15 @@
         </ul>
     </nav>
 
-    <button class="music-btn">
+     <button class="music-btn" id="musicBtn">
         <span class="play-icon"></span>
-        <span>Music</span>
+        <span class="music-text">Music</span>
     </button>
+    
+    <audio id="bgmusic" loop preload="none">
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
     <div class="menu-toggle">
         <i class="fa-solid fa-bars"></i>
     </div>

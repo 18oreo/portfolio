@@ -2,19 +2,28 @@ window.addEventListener('load', () => {
     document.getElementById('preloader').classList.add('fade-out');
 });
 
-const musicButton = document.querySelector('.music-btn');
-const music = document.getElementById('background-music');
-const musicLabel = document.querySelector('.music-label');
+const musicBtn = document.getElementById('musicBtn');
+const bgMusic = document.getElementById('bgmusic');
 
-const musicBtn = document.getElementById('musicBtn')
-const bgMusic = document.getElementById('bgMusic')
+const setMusicButtonState = (isPlaying) => {
+    musicBtn.classList.toggle('playing', isPlaying);
+    musicBtn.setAttribute('aria-pressed', String(isPlaying));
+    musicBtn.setAttribute('aria-label', isPlaying ? 'Pause music' : 'Play music');
+};
 
-musicBtn.addEventListener("click",()=>{
-    if(bgMusic.pause){
-        bgMusic.play();
-        musicBtn.classList.add("playing")
+bgMusic.addEventListener('play', () => setMusicButtonState(true));
+bgMusic.addEventListener('pause', () => setMusicButtonState(false));
+bgMusic.addEventListener('ended', () => setMusicButtonState(false));
+
+musicBtn.addEventListener('click', async () => {
+    if (bgmusic.paused) {
+        try {
+            await bgmusic.play();
+        } catch (error) {
+            console.error('Music could not be played:', error);
+            setMusicButtonState(false);
+        }
     } else {
-        bgMusic.pause();
-        musicBtn.classList.remove("playing")
+        bgmusic.pause();
     }
-})
+});

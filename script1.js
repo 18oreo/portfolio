@@ -16,14 +16,38 @@ bgMusic.addEventListener('pause', () => setMusicButtonState(false));
 bgMusic.addEventListener('ended', () => setMusicButtonState(false));
 
 musicBtn.addEventListener('click', async () => {
-    if (bgmusic.paused) {
+    if (bgMusic.paused) {
         try {
-            await bgmusic.play();
+            await bgMusic.play();
         } catch (error) {
             console.error('Music could not be played:', error);
             setMusicButtonState(false);
         }
     } else {
-        bgmusic.pause();
+        bgMusic.pause();
     }
 });
+
+const cursor = document.querySelector('.cursor');
+const cursorFollower = document.querySelector('.cursor-follow');
+
+document.addEventListener('mousemove',(e)=>{
+    cursor.style.left = e.clientX+'px';
+    cursor.style.top = e.clientY+'px';
+
+    setTimeout(()=>{
+        cursorFollower.style.left = e.clientX+'px';
+        cursorFollower.style.top=e.clientY+'px';
+    },100);
+});
+
+document.querySelectorAll('a,button, .portfolio-item, .service-card').forEach(element =>{
+    element.addEventListener('mouseenter',()=>{
+        cursor.classList.add('active');
+    });
+
+    element.addEventListener('mouseleave',()=>{
+        cursor.classList.remove('active');
+        cursorFollower.classList.remove('active');
+    })
+})

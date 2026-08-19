@@ -51,3 +51,5 @@ document.querySelectorAll('a,button, .portfolio-item, .service-card').forEach(el
         cursorFollower.classList.remove('active');
     })
 })
+
+

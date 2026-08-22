@@ -52,4 +52,12 @@ document.querySelectorAll('a,button, .portfolio-item, .service-card').forEach(el
     })
 })
 
+const backToTop = document.querySelector('.back-to-top');
+window.addEventListener('scroll',()=>{
+    if(window.pageYOffset>300){
+        backToTop.classList.add('active');
+    }else{
+        backToTop.classList.remove('active')
+    }
+});
 

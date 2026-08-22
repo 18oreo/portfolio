@@ -702,3 +702,37 @@ img {
     font-size: 1.5rem;
     z-index: 2;
 }
+
+.timeline-item:nth-child(odd) .timeline-icon {
+    left: auto;
+    right: -35px;
+}
+
+.timeline-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.timeline-content h4 {
+    font-size: 1.1rem;
+    color: #6c63ff;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.timeline-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    background-color: rgba(108,99,255,0.3);
+    color: #6c63ff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}

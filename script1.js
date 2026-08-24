@@ -61,3 +61,21 @@ window.addEventListener('scroll',()=>{
     }
 });
 
+const filterButton = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+filterButton.forEach(button =>{
+    button.addEventListener('click',()=>{
+        filterButton.forEach(btn=>btn.classList.remove('active'));
+        button.classList.add('active');
+        const filterValue = button.getAttribute('data-filter');
+
+        portfolioItems.forEach(item => {
+            if(filterValue === 'all'||item.getAttribute('data-category') === filterValue){
+                item.style.display = 'block';
+            } else {
+                item.style.display ='none';
+            }
+        });
+    });
+});

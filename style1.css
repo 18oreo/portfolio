@@ -203,7 +203,7 @@ img {
     background-color: #6c63ff;
     pointer-events: none;
     mix-blend-mode: difference;
-    z-index: 999;
+    z-index: 99999;
     transform: translate(-50%, -50%);
     transition: transform 0.1s ease;
 }
@@ -215,7 +215,7 @@ img {
     border-radius: 50%;
     border: 1px solid #6c63ff;
     pointer-events: none;
-    z-index: 998;
+    z-index: 99999;
     transform: translate(-50%, -50%);
     transition: transform 0.4s ease, width 0.3s ease, height 0.3s ease;
 }

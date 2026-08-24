@@ -561,6 +561,7 @@ img {
 .code-card {
     flex: 1;
     min-width: 0;
+    margin: 10px -50px 0 -100px;
     background: #0d1117;
     color: #c9d1d9;
     padding: 20px;

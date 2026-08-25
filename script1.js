@@ -41,7 +41,7 @@ document.addEventListener('mousemove',(e)=>{
     },100);
 });
 
-document.querySelectorAll('a,button, .portfolio-item, .service-card').forEach(element =>{
+document.querySelectorAll('a,button, .project-item, .service-card').forEach(element =>{
     element.addEventListener('mouseenter',()=>{
         cursor.classList.add('active');
     });
@@ -62,7 +62,7 @@ window.addEventListener('scroll',()=>{
 });
 
 const filterButton = document.querySelectorAll('.filter-btn');
-const portfolioItems = document.querySelectorAll('.portfolio-item');
+const projectItems = document.querySelectorAll('.project-item');
 
 filterButton.forEach(button =>{
     button.addEventListener('click',()=>{
@@ -70,7 +70,7 @@ filterButton.forEach(button =>{
         button.classList.add('active');
         const filterValue = button.getAttribute('data-filter');
 
-        portfolioItems.forEach(item => {
+        projectItems.forEach(item => {
             if(filterValue === 'all'||item.getAttribute('data-category') === filterValue){
                 item.style.display = 'block';
             } else {

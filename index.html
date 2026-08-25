@@ -9,6 +9,7 @@
 </head>
 <body>
 
+<!-- pre loader -->
     <div class="preloader" id="preloader">
         <div class="loader">
         <div class="loader-bubble"></div>
@@ -20,38 +21,47 @@
         </div>
     </div>
 
+<!-- cursor effect -->
     <div class="cursor"></div>
     <div class="cursor-follow"></div>
 
-
+<!-- header -->
 <header class="header">
+
+<!-- navbar -->
 <div class="nav-container">
     <div class="container">
+
+<!-- navbar logo -->
     <div class="logo">
         <a href="#">SYNTAXA</a>
     </div>
 
+<!-- navbar -->
     <nav class="navbar">
         <ul>
             <li><a href="#home" class="nav-link">Home</a></li>
             <li><a href="#about" class="nav-link">About</a></li>
             <li><a href="#internship" class="nav-link">Internship & Workshops</a></li>
-            <li><a href="#portfolio" class="nav-link">Projects</a></li>
-            <li><a href="#" class="nav-link">Services</a></li>
+            <li><a href="#project" class="nav-link">Projects</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
             <li><a href="#" class="nav-link">Contact</a></li>
         </ul>
         
     </nav>
 
+<!-- music button -->
      <button class="music-btn" id="musicBtn" type="button" aria-label="Play music" aria-pressed="false">
         <span class="play-icon"></span>
         <span class="music-text">Music</span>
     </button>
     
+<!-- music file -->
     <audio id="bgmusic" loop preload="none">
         <source src="components/portfolio_music.mp3" type="audio/mpeg">
     </audio>
 
+<!-- menue bar toggler -->
     <div class="menu-toggle">
         <i class="fa-solid fa-bars"></i>
     </div>
@@ -59,7 +69,7 @@
 </div>
 </header>
 
-
+<!-- Hero -->
 <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
@@ -90,7 +100,7 @@
         </div>
 </section>
 
-
+<!-- About -->
 <section class="about section" id="about">
     <div class="container">
         <div class="section-header">
@@ -190,10 +200,11 @@
     </div>
 </section>
 
+<!-- Internshipd and Workshops -->
 <section class="internship section" id="internship">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">My<span>Internships </span>&<br><span>Workshops</span></h2>
+            <h2 class="section-title">My<span> Internships </span>&<br><span>Workshops</span></h2>
             <p class="section-subtitle">Professional Experience</p>
         </div>
         <div class="internship-timeline">
@@ -340,6 +351,8 @@
             <button class="filter-btn active" data-filter="iot">IoT</button>
              <button class="filter-btn active" data-filter="iot-web">IoT & Web Development</button>
         </div>
+
+
         <div class="project-grid">
             <div class="project-item" data-category="iot-web">
                 <div class="project-image">
@@ -365,6 +378,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="project-item" data-category="web">
                 <div class="project-image">
                     <img src="components\music_recomendation_system.png" alt="Project 3">
@@ -416,6 +430,42 @@
         </div>
     </div>
 </section>
+
+<!-- services -->
+ <section class="services section" id="services">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">My<span> Services</span></h2>
+            <p class="section-subtitle">What I Offer</p>
+        </div>
+        <div class="services-grid">
+            <div class="services-card">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>Custom website development with clean, efficient code</p>
+                <div class="services-wave"></div>
+            </div>
+            <div class="services-card">
+                <div class="service-icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <h3>Modern Frontend</h3>
+                <p>Modern froentend with interactive and intuitive design</p>
+                <div class="services-wave"></div>
+            </div>
+            <div class="services-card">
+                <div class="service-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3>Consulting</h3>
+                <p>provide modern approches and guidence to beginer</p>
+                <div class="services-wave"></div>
+            </div>
+        </div>
+    </div>
+ </section>
 
 <!-- footer section -->
 <footer class="footer">

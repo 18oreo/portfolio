@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* bassic */
 * {
     margin: 0;
     padding: 0;
@@ -114,6 +115,7 @@ img {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+/* preloader */
 .preloader {
     position: fixed;
     top: 0;
@@ -133,6 +135,7 @@ img {
     pointer-events: none;
 }
 
+/* loader */
 .loader {
     display: flex;
     justify-content: center;
@@ -195,6 +198,7 @@ img {
     }
 }
 
+/* cursor effect */
 .cursor {
     position: fixed;
     width: 20px;
@@ -219,6 +223,8 @@ img {
     transform: translate(-50%, -50%);
     transition: transform 0.4s ease, width 0.3s ease, height 0.3s ease;
 }
+
+/* header tag */
 .header {
     position: fixed;
     top: 0;
@@ -242,6 +248,7 @@ img {
     align-items: center;
 }
 
+/* navbar logo */
 .logo a {
     font-size: 1.8rem;
     font-weight: 700;
@@ -250,6 +257,7 @@ img {
     padding-left: 40px;
 }
 
+/* navbar container */
 .nav-container {
     display: flex;
     justify-content: center;
@@ -266,6 +274,8 @@ img {
     background-color: #ffffff;
     opacity: 0.9;
 }
+
+/* navbar */
 .navbar ul {
     display: flex;
 }
@@ -297,6 +307,7 @@ img {
     width: 100%;
 }
 
+/* music button */
 .music-btn {
     display: flex;
     align-items: center;
@@ -358,6 +369,7 @@ img {
     color: black;
 }
 
+/* hero section */
 .hero {
     height: 100vh;
     display: flex;
@@ -495,6 +507,7 @@ img {
     animation: bounce 2s infinite;
 }
 
+/* scroll line */
 .scroll-line {
     width: 2px;
     height: 50px;
@@ -508,8 +521,7 @@ img {
     60% { transform: translateY(-10px) translateX(-50%);}
 }
 
-
-
+/* about section */
 .about {
     background-color: #ffffff;
 }
@@ -632,6 +644,7 @@ img {
     color: #7ee787;
 }
 
+/* internships and workshops */
 .internship {
     background-color: #ffffff;
 }
@@ -820,6 +833,7 @@ img {
     gap: 12px;
 }
 
+/* projects section */
 .project {
     background-color: #ffffff;
 }
@@ -935,7 +949,10 @@ img {
     color: #ffffff;
 }
 
+/* services */
 
+
+/* footer section */
 .footer {
     background-color: #2f2e41;
     color: #ffffff;
@@ -978,6 +995,7 @@ img {
     font-size: 0.9rem;
 }
 
+/* back to top */
 .back-to-top {
     position: fixed;
     bottom: 30px;

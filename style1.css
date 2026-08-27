@@ -529,6 +529,14 @@ img {
     60% { transform: translateY(-10px) translateX(-50%);}
 }
 
+/* mobile-only bounce (no translateX, since the element is
+   centered by flexbox instead of absolute-position + transform) */
+@keyframes bounceStatic {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-16px); }
+    60% { transform: translateY(-8px); }
+}
+
 /* about section */
 .about {
     background-color: #ffffff;
@@ -1450,12 +1458,20 @@ img {
 
     .hero {
         height: auto;
-        padding: 140px 0 80px;
+        padding: 140px 0 60px;
+        flex-direction: column;
     }
 
     .hero .container {
         flex-direction: column;
         text-align: center;
+    }
+
+    .hero-scroll {
+        position: static;
+        transform: none;
+        margin: 30px auto 0;
+        animation: bounceStatic 2s infinite;
     }
 
     .hero-content {
@@ -1540,6 +1556,16 @@ img {
 
     .hero {
         padding: 120px 0 60px;
+    }
+
+    .hero-scroll {
+        margin-top: 20px;
+        font-size: 0.8rem;
+    }
+
+    .hero-scroll .scroll-line {
+        height: 30px;
+        margin-top: 8px;
     }
 
     .hero-title {

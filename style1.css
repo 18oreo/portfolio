@@ -1618,8 +1618,14 @@ img {
 
     .timeline-content {
         padding: 18px;
+        padding-right: 70px;
+        box-sizing: border-box;
     }
-
+    
+    .timeline-item {
+        width: calc(100%-65px);
+        overflow-x: hidden;
+    }
     .timeline-content h3 {
         font-size: 1.15rem;
     }

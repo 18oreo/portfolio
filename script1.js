@@ -124,3 +124,56 @@ if (menuToggle && navContainer) {
         });
     });
 }
+
+// / ===== Contact form: send via Web3Forms =====
+// Sends the message straight to your inbox. Web3Forms also supports
+// a free "Auto Responder" (thank-you email back to the visitor) —
+// enable it from your Web3Forms dashboard under this access key's
+// settings if you'd like that too.
+const contactForm = document.getElementById('contactForm');
+const contactSubmitBtn = document.getElementById('contactSubmitBtn');
+const formStatus = document.getElementById('formStatus');
+ 
+const setFormStatus = (message, type) => {
+    if (!formStatus) return;
+    formStatus.textContent = message;
+    formStatus.className = 'form-status ' + type;
+};
+ 
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+ 
+        const formData = new FormData(contactForm);
+        formData.append('access_key', '5b4d3a2b-1adf-49f0-a19c-2ffe0d004bbf');
+        formData.append('subject', `New portfolio message: ${formData.get('subject') || 'No subject'}`);
+        formData.append('from_name', 'Portfolio Contact Form');
+ 
+        const originalText = contactSubmitBtn.textContent;
+        contactSubmitBtn.disabled = true;
+        contactSubmitBtn.textContent = 'Sending...';
+        setFormStatus('', '');
+ 
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { Accept: 'application/json' },
+                body: formData
+            });
+            const data = await response.json();
+ 
+            if (response.ok && data.success) {
+                setFormStatus('Thanks! Your message has been sent — I\'ll get back to you soon.', 'success');
+                contactForm.reset();
+            } else {
+                setFormStatus('Error: ' + (data.message || 'Something went wrong.'), 'error');
+            }
+        } catch (error) {
+            console.error('Web3Forms error:', error);
+            setFormStatus('Something went wrong. Please try again or email me directly.', 'error');
+        } finally {
+            contactSubmitBtn.disabled = false;
+            contactSubmitBtn.textContent = originalText;
+        }
+    });
+}

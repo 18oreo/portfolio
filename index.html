@@ -51,11 +51,12 @@
     </nav>
 
 <!-- music button -->
-     <button class="music-btn" id="musicBtn" type="button" aria-label="Play music" aria-pressed="false">
+    <div class="nav-actions">
+    <button class="music-btn" id="musicBtn" type="button" aria-label="Play music" aria-pressed="false">
         <span class="play-icon"></span>
         <span class="music-text">Music</span>
     </button>
-    
+
 <!-- music file -->
     <audio id="bgmusic" loop preload="none">
         <source src="components/portfolio_music.mp3" type="audio/mpeg">
@@ -64,6 +65,7 @@
 <!-- menue bar toggler -->
     <div class="menu-toggle">
         <i class="fa-solid fa-bars"></i>
+    </div>
     </div>
     </div>
 </div>
@@ -529,7 +531,8 @@
                             <textarea id="message" name="message" required></textarea>
                             <label for="message">Your Message</label>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary" id="contactSubmitBtn">Send Message</button>
+                        <p id="formStatus" class="form-status"></p>
                     </form>
                 </div>
             </div>

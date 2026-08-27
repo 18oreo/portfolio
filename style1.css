@@ -1133,6 +1133,20 @@ img {
     color: #6c63ff;
 }
 
+.form-status {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    min-height: 1.2em;
+}
+
+.form-status.success {
+    color: #2ecc71;
+}
+
+.form-status.error {
+    color: #e74c3c;
+}
+
 /* footer section */
  .footer {
     background-color: #2f2e41;

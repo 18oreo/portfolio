@@ -1,7 +1,9 @@
+// preloader 
 window.addEventListener('load', () => {
     document.getElementById('preloader').classList.add('fade-out');
 });
 
+// music button
 const musicBtn = document.getElementById('musicBtn');
 const bgMusic = document.getElementById('bgmusic');
 
@@ -28,6 +30,7 @@ musicBtn.addEventListener('click', async () => {
     }
 });
 
+// cursor effect
 const cursor = document.querySelector('.cursor');
 const cursorFollower = document.querySelector('.cursor-follow');
 
@@ -52,15 +55,20 @@ document.querySelectorAll('a,button, .project-item, .service-card').forEach(elem
     })
 })
 
-const backToTop = document.querySelector('.back-to-top');
-window.addEventListener('scroll',()=>{
-    if(window.pageYOffset>300){
-        backToTop.classList.add('active');
-    }else{
-        backToTop.classList.remove('active')
-    }
+// Add this to your existing event listeners
+document.querySelectorAll('.certificate-link').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        cursor.classList.add('certificate-hover');
+        cursorFollower.classList.add('certificate-hover');
+    });
+    
+    link.addEventListener('mouseleave', () => {
+        cursor.classList.remove('certificate-hover');
+        cursorFollower.classList.remove('certificate-hover');
+    });
 });
 
+// project filter button    
 const filterButton = document.querySelectorAll('.filter-btn');
 const projectItems = document.querySelectorAll('.project-item');
 
@@ -79,3 +87,40 @@ filterButton.forEach(button =>{
         });
     });
 });
+
+// back to top button
+const backToTop = document.querySelector('.back-to-top');
+window.addEventListener('scroll',()=>{
+    if(window.pageYOffset>300){
+        backToTop.classList.add('active');
+    }else{
+        backToTop.classList.remove('active')
+    }
+});
+
+// mobile menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const navContainer = document.querySelector('.nav-container');
+const navLinks = document.querySelectorAll('.navbar .nav-link');
+
+if (menuToggle && navContainer) {
+    menuToggle.addEventListener('click', () => {
+        navContainer.classList.toggle('menu-open');
+        const icon = menuToggle.querySelector('i');
+        if (icon) {
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navContainer.classList.remove('menu-open');
+            const icon = menuToggle.querySelector('i');
+            if (icon) {
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            }
+        });
+    });
+}
